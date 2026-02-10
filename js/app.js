@@ -1,4 +1,4 @@
-var items = groceryItems;
+var items = getLocalStorage();
 var editId = null
 
 function render(){
@@ -27,6 +27,7 @@ function editCompleted(itemId){
         }
         return item;
     })
+    setLocalStorage(items)
     render();
 }
 
@@ -35,6 +36,7 @@ function removeItem(itemId){
         return item.id !== itemId
     })
     editId = null
+    setLocalStorage(items)
     render();
     setTimeout(function(){
         alert("Item Deleted Successfully")
@@ -52,6 +54,7 @@ function addItem(itemName){
         id: generateId(),
     }
     items.push(newItem)
+    setLocalStorage(items)
     render()
     setTimeout(function(){
         alert("Item Added to your List")
@@ -66,6 +69,7 @@ function updateItemName(newName){
         return item
     })
     editId = null
+    setLocalStorage(items)
     render()
     setTimeout(function(){
         alert("Item Updated Successfully")
@@ -81,4 +85,15 @@ function setEditId(itemId){
     },0)
 }
 
+function getLocalStorage(){
+    var list = localStorage.getItem("grocery-list")
+    if (list){
+        return JSON.parse(list)
+    }
+    return [];
+}
+
+function setLocalStorage(itemsArray){
+    localStorage.setItem("grocery-list",JSON.stringify(itemsArray))
+}
 
