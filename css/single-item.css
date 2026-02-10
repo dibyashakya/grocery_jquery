@@ -11,27 +11,31 @@
 
 .single-item input[type="checkbox"]{
     cursor: pointer;
-    width: 1rem;
-    height: 1rem;
+    width: 0.65rem;
+    height: 0.65rem;
+    accent-color: #6FBF8F;
 }
 
 .single-item .btn{
     cursor: pointer;
     color: #fff;
-    background: gray;
-    border-radius: 0.25rem;
-    padding: 0.37rem 0.37rem;
+    background: #4F8F6A;
+    border-radius: 6px;
+    padding: 0.15rem 0.35rem;
     font-size: 1rem;
+    border: transparent;
 }
 
 .single-item .btn:hover{
-    background: lightblue;
+    background: #e2e8f0;
+    color: #2a2f33;
 }
 
 .single-item .remove-btn{
-    background: gray;
+    background: #C96B6B;
 }
 
 .single-item .remove-btn:hover{
-    background: lightblue;
+    background: #e2e8f0;
+    color: #2a2f33;
 }
